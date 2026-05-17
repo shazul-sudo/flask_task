@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block title %}NexaWeb — Home{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{{ url_for('static', filename='css/pages.css') }}">{% endblock %}
+
+{% block content %}
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="anim-up">
+    <div class="hero-tag">✦ Welcome to NexaWeb</div>
+    <h1 class="hero-title">
+      Build.<br>
+      <span>Launch.</span><br>
+      Grow.
+    </h1>
+    <p class="hero-desc">
+      A fully-functional Flask multi-page website for SE-105L, demonstrating
+      routing, Jinja2 templates, form validation, and distinct visual design
+      on every page.
+    </p>
+    <div class="hero-btns">
+      <a href="{{ url_for('services') }}" class="btn btn-gold">Explore Services</a>
+      <a href="{{ url_for('about') }}"    class="btn btn-ghost">Learn More</a>
+    </div>
+  </div>
+
+  <div class="hero-visual anim-up-d">
+    <div class="tile">
+      <div class="tile-icon">⚡</div>
+      <div class="tile-name">Fast</div>
+      <div class="tile-desc">Optimised Flask routing on every request</div>
+    </div>
+    <div class="tile">
+      <div class="tile-icon">🎨</div>
+      <div class="tile-name">Design</div>
+      <div class="tile-desc">Unique visual identity per page</div>
+    </div>
+    <div class="tile">
+      <div class="tile-icon">🔒</div>
+      <div class="tile-name">Secure</div>
+      <div class="tile-desc">Validated forms and session handling</div>
+    </div>
+    <div class="tile">
+      <div class="tile-icon">🐍</div>
+      <div class="tile-name">Flask</div>
+      <div class="tile-desc">Python backend powering all routes</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STATS ═══ -->
+<div class="stats-bar">
+  <div class="stat-item"><div class="stat-num">7</div><div class="stat-lbl">Pages Built</div></div>
+  <div class="stat-item"><div class="stat-num">100%</div><div class="stat-lbl">Responsive</div></div>
+  <div class="stat-item"><div class="stat-num">Flask</div><div class="stat-lbl">Backend</div></div>
+  <div class="stat-item"><div class="stat-num">SE-105L</div><div class="stat-lbl">Project</div></div>
+</div>
+
+<!-- ═══ FEATURES ═══ -->
+<section class="features">
+  <div class="section-eyebrow">What We Offer</div>
+  <h2 class="section-title light">Core Features</h2>
+
+  <div class="features-grid">
+    <div class="feat-card">
+      <div class="feat-icon">🗂️</div>
+      <div class="feat-title">Organised Structure</div>
+      <p class="feat-text">Flask's <code>templates/</code> and <code>static/</code> folder conventions for clean, maintainable code.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">📝</div>
+      <div class="feat-title">Form Validation</div>
+      <p class="feat-text">Contact, login, and register forms all include server-side validation with flash messaging.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🖼️</div>
+      <div class="feat-title">Visual Gallery</div>
+      <p class="feat-text">A curated masonry grid with hover overlays and dynamic data passed from Flask.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🔄</div>
+      <div class="feat-title">Simulated Auth</div>
+      <p class="feat-text">Login and registration workflows demonstrated with Flask sessions — no live database required.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🧩</div>
+      <div class="feat-title">Jinja2 Inheritance</div>
+      <p class="feat-text">A single <code>base.html</code> drives the shared navbar and footer across all pages via <code>{% raw %}{% block %}{% endraw %}</code>.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">📱</div>
+      <div class="feat-title">Fully Responsive</div>
+      <p class="feat-text">Every page adapts beautifully from mobile to desktop with a hamburger nav on small screens.</p>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

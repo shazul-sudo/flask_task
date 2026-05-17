@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block title %}NexaWeb — Contact{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{{ url_for('static', filename='css/pages.css') }}">{% endblock %}
+
+{% block content %}
+<div class="contact-layout">
+
+  <!-- LEFT PANEL -->
+  <div class="c-left">
+    <div>
+      <h1>Let's<br>Talk <em>Together</em></h1>
+      <p class="c-left-sub">Have a question or project idea? Fill out the form and we'll respond within 24 hours.</p>
+
+      <div class="c-info">
+        <div class="c-info-item">
+          <div class="c-info-icon">📧</div>
+          <div>
+            <div class="c-info-lbl">Email</div>
+            <div class="c-info-val">hello@nexaweb.dev</div>
+          </div>
+        </div>
+        <div class="c-info-item">
+          <div class="c-info-icon">📍</div>
+          <div>
+            <div class="c-info-lbl">Location</div>
+            <div class="c-info-val">SSUET, Karachi, Pakistan</div>
+          </div>
+        </div>
+        <div class="c-info-item">
+          <div class="c-info-icon">🕒</div>
+          <div>
+            <div class="c-info-lbl">Response Time</div>
+            <div class="c-info-val">Within 24 hours</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="c-decor">✉</div>
+  </div>
+
+  <!-- RIGHT PANEL — FORM -->
+  <div class="c-right">
+    <div class="c-form-head">
+      <h2>Send a Message</h2>
+      <p>All starred fields are required. We'll never share your email.</p>
+    </div>
+    <hr class="c-divider">
+
+    <form method="POST" action="{{ url_for('contact') }}">
+      <div class="form-row-2">
+        <div class="form-group">
+          <label for="name">Full Name *</label>
+          <input type="text" id="name" name="name" placeholder="Jane Smith" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" placeholder="jane@email.com" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="What's this about?">
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" placeholder="Tell us about your project or question…" required></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-forest" style="width:100%;">Send Message →</button>
+    </form>
+  </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block title %}NexaWeb — About{% endblock %}
+{% block extra_css %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/pages.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+<!-- ═══ HERO ═══ -->
+<div class="about-hero">
+  <div>
+    <div class="section-eyebrow">Our Story</div>
+    <h1>About <em>Us</em></h1>
+  </div>
+  <div class="hero-aside">
+    <p>NexaWeb is a student-built showcase for SE-105L at SSUET, proving that academic web projects can be both technically sound and visually remarkable — powered by Flask.</p>
+  </div>
+</div>
+
+<!-- ═══ MISSION ═══ -->
+<div class="mission">
+  <div class="mission-art">🌐</div>
+  <div class="mission-text">
+    <h2>Our Mission</h2>
+    <p>We set out to prove that academic web projects don't need to be bland. By combining Flask's routing simplicity with thoughtful visual design, NexaWeb gives each page its own aesthetic personality while sharing a unified brand.</p>
+    <p>From the dark gold-accented home to this warm editorial about section — every view was crafted with intention.</p>
+  </div>
+</div>
+
+<!-- ═══ TEAM ═══ -->
+<section class="team-section">
+  <div class="row-header">
+    <h2>Meet the Team</h2>
+    <div class="row-rule"></div>
+  </div>
+
+  <div class="team-grid">
+    <div class="team-card">
+      <div class="team-avatar av-a">👩‍💻</div>
+      <div class="team-info">
+        <div class="team-name">Ayesha Raza</div>
+        <div class="team-role">Lead Developer</div>
+        <p class="team-bio">Handles Flask routing, Jinja2 templates, and overall project architecture.</p>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar av-b">👨‍🎨</div>
+      <div class="team-info">
+        <div class="team-name">Omar Siddiqui</div>
+        <div class="team-role">UI Designer</div>
+        <p class="team-bio">Crafts the visual identity and CSS for each unique page style.</p>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar av-c">👩‍📊</div>
+      <div class="team-info">
+        <div class="team-name">Sana Malik</div>
+        <div class="team-role">Content & QA</div>
+        <p class="team-bio">Writes content, tests form validation, and prepares the presentation slides.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ VALUES BAND ═══ -->
+<div class="values-band">
+  <h2>By the Numbers</h2>
+  <div class="values-grid">
+    <div class="val-item"><div class="val-num">7</div><div class="val-lbl">Unique Pages</div></div>
+    <div class="val-item"><div class="val-num">7</div><div class="val-lbl">Flask Routes</div></div>
+    <div class="val-item"><div class="val-num">3</div><div class="val-lbl">Team Members</div></div>
+    <div class="val-item"><div class="val-num">∞</div><div class="val-lbl">Creativity</div></div>
+  </div>
+</div>
+
+{% endblock %}

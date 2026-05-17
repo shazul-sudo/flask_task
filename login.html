@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}NexaWeb — Login{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{{ url_for('static', filename='css/pages.css') }}">{% endblock %}
+
+{% block content %}
+
+<div class="login-wrap">
+
+  <!-- Terminal chrome -->
+  <div class="terminal-bar">
+    <div class="dot dot-r"></div>
+    <div class="dot dot-y"></div>
+    <div class="dot dot-g"></div>
+    <span class="terminal-label">nexaweb — auth — bash</span>
+  </div>
+
+  <div class="login-card">
+    <div class="terminal-prompt">$ ./login.py --user</div>
+    <h2>Sign In</h2>
+    <p class="sub">Access your NexaWeb account</p>
+    <hr class="login-divider">
+
+    <form method="POST" action="{{ url_for('login') }}">
+      <div class="form-group">
+        <label for="username">USERNAME</label>
+        <input type="text" id="username" name="username" placeholder="your_username" required autocomplete="username">
+      </div>
+      <div class="form-group">
+        <label for="password">PASSWORD</label>
+        <input type="password" id="password" name="password" placeholder="••••••••" required autocomplete="current-password">
+      </div>
+      <button type="submit" class="btn btn-teal" style="width:100%;margin-top:.3rem;">Login →</button>
+    </form>
+
+    <div class="form-foot" style="margin-top:1.4rem;">
+      No account? <a href="{{ url_for('register') }}">Register here</a>
+      &nbsp;·&nbsp;
+      <a href="{{ url_for('home') }}">Back to Home</a>
+    </div>
+
+    <!-- Flask code snippet preview -->
+    <div class="code-peek">
+      <div class="code-line"><span class="kw">@app</span>.<span class="fn">route</span>(<span class="st">'/login'</span>, methods=[<span class="st">'GET','POST'</span>])</div>
+      <div class="code-line"><span class="kw">def</span> <span class="fn">login</span>():  <span style="color:#3a3a5a"># Flask route handler</span></div>
+      <div class="code-line">&nbsp;&nbsp;<span class="kw">return</span> render_template(<span class="st">'login.html'</span>)</div>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

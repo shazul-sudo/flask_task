@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block title %}NexaWeb — Services{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{{ url_for('static', filename='css/pages.css') }}">{% endblock %}
+
+{% block content %}
+
+<!-- ═══ HERO ═══ -->
+<div class="services-hero">
+  <div class="badge">What We Do</div>
+  <h1>Our Services</h1>
+  <p>From design to deployment — comprehensive web solutions built on modern technologies, rendered dynamically from Flask.</p>
+</div>
+
+<!-- ═══ SERVICE CARDS (data from Flask route) ═══ -->
+<section class="services-grid-section">
+  <div class="srv-grid">
+    {% for s in services %}
+    <div class="srv-card">
+      <div class="srv-icon">{{ s.icon }}</div>
+      <div class="srv-tag">Service</div>
+      <div class="srv-title">{{ s.title }}</div>
+      <p class="srv-desc">{{ s.desc }}</p>
+      <div class="srv-price">{{ s.price }}</div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- ═══ PRICING TABLE ═══ -->
+<section class="table-section">
+  <h2>Pricing Overview</h2>
+  <table class="price-table">
+    <thead>
+      <tr>
+        <th>Service</th>
+        <th>Description</th>
+        <th>Duration</th>
+        <th>Price</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for s in services %}
+      <tr>
+        <td><strong>{{ s.title }}</strong></td>
+        <td>{{ s.desc[:60] }}…</td>
+        <td>2–4 weeks</td>
+        <td class="price-col">{{ s.price }}</td>
+        <td>
+          {% if loop.index is odd %}
+            <span class="pill pill-green">Available</span>
+          {% else %}
+            <span class="pill pill-teal">Popular</span>
+          {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+
+{% endblock %}

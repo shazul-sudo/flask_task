@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}NexaWeb — Gallery{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{{ url_for('static', filename='css/pages.css') }}">{% endblock %}
+
+{% block content %}
+
+<!-- ═══ HEADER ═══ -->
+<div class="gallery-hero">
+  <h1><span class="w1">Our</span> <span class="w2">Creative</span> <span class="w3">Gallery</span></h1>
+  <p class="gallery-sub">A curated showcase of web design, digital art &amp; project visuals — data served by Flask</p>
+</div>
+
+<!-- ═══ FILTER TABS ═══ -->
+<div class="filters">
+  <button class="filter-btn active">All</button>
+  <button class="filter-btn">Web Design</button>
+  <button class="filter-btn">Digital Art</button>
+  <button class="filter-btn">UI Components</button>
+  <button class="filter-btn">Projects</button>
+</div>
+
+<!-- ═══ MASONRY GRID (items passed from Flask) ═══ -->
+<div class="gallery-grid">
+  {% for item in items %}
+  <div class="g-item">
+    <div class="g-tile {{ item.cls }}">
+      {{ item.emoji }}
+      <div class="g-overlay">
+        <div class="g-info">
+          <div class="g-title">{{ item.title }}</div>
+          <div class="g-tag">{{ item.tag }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}
