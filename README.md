@@ -75,4 +75,3 @@ http://127.0.0.1:5000
 
 ---
 
-*SE-105L · Introduction to Computing · SSUET/QR/114 · 2024*
